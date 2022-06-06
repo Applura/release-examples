@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build:client": "vite build",
+    "build:server": "vite --config vite.config.server.js build --emptyOutDir=false",
+    "build": "npm run build:client && npm run build:server",
     "preview": "vite preview"
   },
   "dependencies": {

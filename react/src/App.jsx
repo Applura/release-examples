@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
@@ -6,6 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
+    <React.StrictMode>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -39,6 +41,7 @@ function App() {
         </p>
       </header>
     </div>
+    </React.StrictMode>
   )
 }
 
