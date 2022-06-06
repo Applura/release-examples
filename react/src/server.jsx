@@ -3,7 +3,7 @@ import App from './App'
 
 const render = (data) =>
   ReactDOMServer.renderToReadableStream(
-    <App />
+    <App resource={data} />
   );
 
 export { render };
