@@ -6,3 +6,5 @@ const ArticlePage = ({ resource }) => (
     </main>
   </article>
 );
+
+export default ArticlePage;

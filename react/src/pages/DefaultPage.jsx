@@ -4,3 +4,5 @@ const DefaultPage = ({ resource }) => (
     <main>Handle unknown page types</main>
   </article>
 );
+
+export default DefaultPage;

@@ -6,3 +6,5 @@ const HomePage = ({ resource }) => (
     </main>
   </article>
 );
+
+export default HomePage;
