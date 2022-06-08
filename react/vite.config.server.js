@@ -8,8 +8,6 @@ export default defineConfig({
       input: 'src/server.jsx',
       output: {
         entryFileNames: '[name].js',
-        chunkFileNames: '[name].js',
-        assetFileNames: '[name].[ext]',
         format: 'esm',
       }
     },
