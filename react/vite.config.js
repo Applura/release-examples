@@ -14,7 +14,7 @@ export default defineConfig(({ command, mode }) => {
           format: 'esm',
         }
       },
-      plugins: [react()]
-    }
+    },
+    plugins: [react()]
   }
 })
