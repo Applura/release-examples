@@ -1,4 +1,4 @@
-const ArticlePage = ({ resource }) => (
+const ArticlePage = () => (
   <article>
     <header>This is an article page</header>
     <main>
