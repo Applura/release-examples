@@ -1,0 +1,94 @@
+{
+  "data": {
+    "type": "collection",
+    "id": "collection:1",
+    "attributes": {
+      "title": "Articles",
+      "body": "<p>Recent news and updates</p>",
+      "articles": [
+        {
+          "id": "article:1",
+          "type": "article"
+        },
+        {
+          "id": "article:2",
+          "type": "article"
+        },
+        {
+          "id": "article:3",
+          "type": "article"
+        }
+      ]
+    },
+    "relationships": {
+      "menu": {
+        "data": {
+          "id": "menu:1",
+          "type": "menu"
+        }
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "menu:1",
+      "type": "menu",
+      "attributes": {
+        "home": {
+          "href": "/",
+          "title": "Home"
+        },
+        "about": {
+          "href": "/about",
+          "title": "About"
+        },
+        "articles": {
+          "href": "/articles",
+          "title": "Articles",
+          "active": true
+        }
+      }
+    },
+    {
+      "id": "article:1",
+      "type": "article",
+      "attributes": {
+        "title": "Article 1"
+      },
+      "links": {
+        "self": {
+          "href": "/article1"
+        }
+      }
+    },
+    {
+      "id": "article:2",
+      "type": "article",
+      "attributes": {
+        "title": "Article 2"
+      },
+      "links": {
+        "self": {
+          "href": "/article2"
+        }
+      }
+    },
+    {
+      "id": "article:3",
+      "type": "article",
+      "attributes": {
+        "title": "Article 3"
+      },
+      "links": {
+        "self": {
+          "href": "/article3"
+        }
+      }
+    }
+  ],
+  "links": {
+    "self": {
+      "href": "/articles/article1"
+    }
+  }
+}

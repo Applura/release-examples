@@ -1,6 +1,8 @@
+import Header from "../components/Header";
+
 const CollectionPage = () => (
   <article>
-    <header>All the articles</header>
+    <Header><p>All the articles</p></Header>
     <main>
       <p>List of articles</p>
     </main>

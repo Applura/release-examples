@@ -1,0 +1,62 @@
+{
+  "data": {
+    "type": "home",
+    "id": "home:1",
+    "attributes": {
+      "title": "Demo home page",
+      "body": "<p>Welcome to the <em>demo page</em></p>"
+    },
+    "relationships": {
+      "menu": {
+        "data": {
+          "id": "menu:1",
+          "type": "menu"
+        }
+      },
+      "featuredArticle": {
+        "data": {
+          "id": "article:1",
+          "type": "article"
+        }
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "menu:1",
+      "type": "menu",
+      "attributes": {
+        "home": {
+          "href": "/",
+          "title": "Home",
+          "active": true
+        },
+        "about": {
+          "href": "/about",
+          "title": "About"
+        },
+        "articles": {
+          "href": "/articles",
+          "title": "Articles"
+        }
+      }
+    },
+    {
+      "id": "article:1",
+      "type": "article",
+      "attributes": {
+        "title": "Article 1"
+      },
+      "links": {
+        "self": {
+          "href": "/article1"
+        }
+      }
+    }
+  ],
+  "links": {
+    "self": {
+      "href": "/"
+    }
+  }
+}

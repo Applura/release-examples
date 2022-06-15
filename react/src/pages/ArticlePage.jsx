@@ -1,6 +1,8 @@
+import Header from "../components/Header";
+
 const ArticlePage = () => (
   <article>
-    <header>This is an article page</header>
+    <Header><p>This is an article page</p></Header>
     <main>
       Article page content
     </main>

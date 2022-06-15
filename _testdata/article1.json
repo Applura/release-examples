@@ -1,0 +1,44 @@
+{
+  "data": {
+    "type": "article",
+    "id": "article:1",
+    "attributes": {
+      "title": "Demo article",
+      "body": "<p>Article1 is all about the new news</p>"
+    },
+    "relationships": {
+      "menu": {
+        "data": {
+          "id": "menu:1",
+          "type": "menu"
+        }
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "menu:1",
+      "type": "menu",
+      "attributes": {
+        "home": {
+          "href": "/",
+          "title": "Home"
+        },
+        "about": {
+          "href": "/about",
+          "title": "About"
+        },
+        "articles": {
+          "href": "/articles",
+          "title": "Articles",
+          "active": true
+        }
+      }
+    }
+  ],
+  "links": {
+    "self": {
+      "href": "/articles/article1"
+    }
+  }
+}

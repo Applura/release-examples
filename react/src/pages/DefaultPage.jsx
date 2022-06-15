@@ -1,6 +1,8 @@
+import Header from "../components/Header";
+
 const DefaultPage = () => (
   <article>
-    <header>Default page type</header>
+    <Header><p>Default page type</p></Header>
     <main>Handle unknown page types</main>
   </article>
 );

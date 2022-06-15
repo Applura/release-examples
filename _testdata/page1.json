@@ -1,0 +1,44 @@
+{
+  "data": {
+    "type": "page",
+    "id": "page:1",
+    "attributes": {
+      "title": "About us",
+      "body": "<p>This is just a basic page</p>"
+    },
+    "relationships": {
+      "menu": {
+        "data": {
+          "id": "menu:1",
+          "type": "menu"
+        }
+      }
+    }
+  },
+  "included": [
+    {
+      "id": "menu:1",
+      "type": "menu",
+      "attributes": {
+        "home": {
+          "href": "/",
+          "title": "Home"
+        },
+        "about": {
+          "href": "/about",
+          "title": "About",
+          "active": true
+        },
+        "articles": {
+          "href": "/articles",
+          "title": "Articles"
+        }
+      }
+    }
+  ],
+  "links": {
+    "self": {
+      "href": "/about"
+    }
+  }
+}
