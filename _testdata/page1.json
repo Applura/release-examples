@@ -39,6 +39,9 @@
   "links": {
     "self": {
       "href": "/about"
+    },
+    "alternate": {
+      "href": "http://localhost:3000/about"
     }
   }
 }

@@ -39,6 +39,9 @@
   "links": {
     "self": {
       "href": "/articles/article1"
+    },
+    "alternate": {
+      "href": "http://localhost:3000/article1"
     }
   }
 }

@@ -38,7 +38,10 @@
   ],
   "links": {
     "self": {
-      "href": "/articles/article2"
+      "href": "/articles/article3"
+    },
+    "alternate": {
+      "href": "http://localhost:3000/article3"
     }
   }
 }
