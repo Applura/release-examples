@@ -15,8 +15,8 @@ const init = async () => {
       (root ?? (root = createRoot(container))).render(component);
     }
   }
-  for await (const { resource, problem } of client.start()) {
-    render(<App resource={resource} problem={problem} client={client} />);
+  for await (const { resource, problem, loading } of client.start()) {
+    render(<App resource={resource} problem={problem} loading={loading} client={client} />);
   }
 }
 // To avoid top level await.

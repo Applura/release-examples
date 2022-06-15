@@ -1,14 +1,15 @@
 import React from 'react'
 import Page from './pages/Page';
 import { ResourceProvider } from './ResourceContext';
-function App({ resource, problems, client }) {
+function App({ resource, problems, client, loading }) {
 
   return (
     <React.StrictMode>
       <ResourceProvider resource={resource} problems={problems} client={client}>
-        <Page type={resource.type}>
+        {resource && <Page type={resource.type}>
 
-        </Page>
+        </Page>}
+        {loading && <p>Loading...</p>}
       </ResourceProvider>
     </React.StrictMode>
   )
