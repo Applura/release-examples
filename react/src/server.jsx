@@ -1,6 +1,6 @@
 import App from './App'
-import { serve } from './glue';
+import { handle } from './glue';
 
-const render = (resource) => serve(App, resource);
+const render = (resource) => handle(App, resource);
 
 export { render };
