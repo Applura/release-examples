@@ -5,10 +5,10 @@ import BasicPage from './pages/BasicPage';
 import HomePage from './pages/HomePage';
 import CollectionPage from './pages/CollectionPage';
 import DefaultPage from './pages/DefaultPage';
-import {ResourceContext} from "./glue/ResourceContext";
+import { useResource } from "./glue/ResourceContext";
 
 function App() {
-  const { resource, loading } = useContext(ResourceContext);
+  const { resource, loading } = useResource();
   return (
     <React.StrictMode>
       <MatchResource resource={resource}>
