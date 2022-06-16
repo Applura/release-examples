@@ -4,18 +4,14 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 
 export default async function mount(Component, id) {
   const container = document.getElementById(id);
-  const client = bootstrap();
-  let root;
-  for await (const { resource, problem } of client.start()) {
-    const RootChild = (
-      <ResourceProvider resource={resource} problem={problem} client={client}>
-        <Component/>
-      </ResourceProvider>
-    );
-    if (!root && container.dataset.appluraRendered) {
-      root = hydrateRoot(container, RootChild);
-    } else {
-      (root || (root = createRoot(container))).render(RootChild);
-    }
+  const RootChild = (
+    <ResourceProvider client={bootstrap()}>
+      <Component/>
+    </ResourceProvider>
+  );
+  if (container.dataset.appluraRendered) {
+    hydrateRoot(container, RootChild);
+  } else {
+    createRoot(container).render(RootChild);
   }
 }
