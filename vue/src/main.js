@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import mount from './glue/mount';
 import App from './App.vue'
 
-createApp(App, { resource: 'foo'}).mount('#app')
+mount(App, '#app');
