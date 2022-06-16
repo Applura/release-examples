@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import MatchResource from './pages/MatchResource';
 import ArticlePage from './pages/ArticlePage';
 import BasicPage from './pages/BasicPage';
