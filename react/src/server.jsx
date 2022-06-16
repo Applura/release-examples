@@ -1,9 +1,6 @@
-import ReactDOMServer from 'react-dom/server'
 import App from './App'
+import { serve } from "./glue/react";
 
-const render = (data) =>
-  ReactDOMServer.renderToReadableStream(
-    <App resource={data} />
-  );
+const render = (resource) => serve(App, resource);
 
 export { render };

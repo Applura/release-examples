@@ -1,8 +1,8 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 const ResourceContext = createContext(null);
-const ResourceProvider = ({ resource, problem, client, children }) => {
 
+const ResourceProvider = ({ resource, problem, client, children }) => {
   const follow = client && client.hasOwnProperty('follow') ? client.follow : () => {};
   return (
     <ResourceContext.Provider value={{ resource, problem, follow }}>
@@ -11,4 +11,8 @@ const ResourceProvider = ({ resource, problem, client, children }) => {
   )
 }
 
-export { ResourceContext, ResourceProvider };
+const useResource = () => {
+  return useContext(ResourceContext);
+}
+
+export { ResourceProvider, useResource };
