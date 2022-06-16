@@ -6,9 +6,9 @@ export default async function mount(Component, id) {
   const container = document.getElementById(id);
   const client = bootstrap();
   let root;
-  for await (const { resource, problem, loading } of client.start()) {
+  for await (const { resource, problem } of client.start()) {
     const RootChild = (
-      <ResourceProvider resource={resource} problem={problem} loading={loading} client={client}>
+      <ResourceProvider resource={resource} problem={problem} client={client}>
         <Component/>
       </ResourceProvider>
     );
