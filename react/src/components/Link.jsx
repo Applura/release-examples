@@ -1,13 +1,12 @@
-import { useContext } from 'react';
-import { ResourceContext } from "../ResourceContext";
+import { useResource } from '../glue';
+
 const Link = ({ link }) => {
-  const { follow } = useContext(ResourceContext);
+  const { follow } = useResource();
   const { href, title, active } = link;
   const handleClick = (e) => {
     e.preventDefault();
     follow(link);
   }
-
   return <a onClick={handleClick} href={href} title={title} className={active ? 'is-active' : ''}>{title}</a>
 }
 

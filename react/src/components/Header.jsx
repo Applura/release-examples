@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import { ResourceContext } from "../ResourceContext";
 import useMenu from '../hooks/useMenu';
 import Menu from "./Menu";
+import { useResource } from '../glue';
 
 const Header = ({ children }) => {
-  const { resource } = useContext(ResourceContext);
+  const { resource } = useResource();
   const { items } = useMenu(resource);
   return (
     <header>

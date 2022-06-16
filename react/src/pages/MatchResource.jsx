@@ -1,4 +1,3 @@
-
 const MatchResource = ({ resource, children }) => {
   if (!resource) {
     return null;

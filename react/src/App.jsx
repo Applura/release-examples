@@ -5,21 +5,20 @@ import BasicPage from './pages/BasicPage';
 import HomePage from './pages/HomePage';
 import CollectionPage from './pages/CollectionPage';
 import DefaultPage from './pages/DefaultPage';
-import { ResourceProvider } from './ResourceContext';
-function App({ resource, problems, loading, client }) {
+import { useResource } from './glue';
 
+function App() {
+  const { resource, loading } = useResource();
   return (
     <React.StrictMode>
-      <ResourceProvider resource={resource} problems={problems} client={client}>
-        <MatchResource resource={resource}>
-          <HomePage type="home" />
-          <BasicPage type="page" />
-          <ArticlePage type="article" />
-          <CollectionPage type="collection" />
-          <DefaultPage default />
-        </MatchResource>
-        {loading && <p>Loading...</p>}
-      </ResourceProvider>
+      <MatchResource resource={resource}>
+        <HomePage type="home" />
+        <BasicPage type="page" />
+        <ArticlePage type="article" />
+        <CollectionPage type="collection" />
+        <DefaultPage default />
+      </MatchResource>
+      {loading && <p>Loading...</p>}
     </React.StrictMode>
   )
 }
