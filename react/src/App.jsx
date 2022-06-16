@@ -5,7 +5,7 @@ import BasicPage from './pages/BasicPage';
 import HomePage from './pages/HomePage';
 import CollectionPage from './pages/CollectionPage';
 import DefaultPage from './pages/DefaultPage';
-import { useResource } from "./glue/ResourceContext";
+import { useResource } from './glue';
 
 function App() {
   const { resource, loading } = useResource();

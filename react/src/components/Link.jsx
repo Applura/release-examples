@@ -1,4 +1,5 @@
-import { useResource } from "../glue/ResourceContext";
+import { useResource } from '../glue';
+
 const Link = ({ link }) => {
   const { follow } = useResource();
   const { href, title, active } = link;
@@ -6,7 +7,6 @@ const Link = ({ link }) => {
     e.preventDefault();
     follow(link);
   }
-
   return <a onClick={handleClick} href={href} title={title} className={active ? 'is-active' : ''}>{title}</a>
 }
 

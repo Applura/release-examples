@@ -1,5 +1,5 @@
 import App from './App'
-import { serve } from "./glue/react";
+import { serve } from './glue';
 
 const render = (resource) => serve(App, resource);
 

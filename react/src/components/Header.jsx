@@ -1,6 +1,6 @@
 import useMenu from '../hooks/useMenu';
 import Menu from "./Menu";
-import { useResource } from "../glue/ResourceContext";
+import { useResource } from '../glue';
 
 const Header = ({ children }) => {
   const { resource } = useResource();
