@@ -1,41 +1,28 @@
 <script setup>
-import { inject } from 'vue';
+import { inject, computed } from 'vue';
 import { resourceKey, problemKey, loadingKey, followKey } from "./glue/keys";
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import HomePage from './pages/HomePage.vue';
+import ArticlePage from './pages/ArticlePage.vue';
+import BasicPage from './pages/BasicPage.vue';
+import CollectionPage from './pages/CollectionPage.vue';
+import DefaultPage from './pages/DefaultPage.vue';
+const pageMap = (type) => {
+  const map = {
+    'home': HomePage,
+    'page': ArticlePage,
+    'article': BasicPage,
+    'collection': CollectionPage
+  }
+  return (type in map) ? map[type] : DefaultPage;
+}
 const resource = inject(resourceKey);
+const problem = inject(problemKey);
 const loading = inject(loadingKey);
 const follow = inject(followKey);
-function home() {
-  follow({ href: '/' });
-}
-function about() {
-  follow({ href: '/about' });
-}
+const type = computed(() => pageMap(resource?.value?.type))
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
   <h1 v-if="loading">Loading...</h1>
-  <ul>
-    <li>
-    <button @click="home">Home</button>
-    </li>
-    <li>
-      <button @click="about">About</button>
-    </li>
-  </ul>
+  <component :is="type" />
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
