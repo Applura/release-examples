@@ -17,11 +17,9 @@ const pageMap = (type) => {
 export default function usePage(resource) {
   const pageType = shallowRef(DefaultPage);
   function mapTypeToPage() {
-    console.log('type', resource.value.type)
     pageType.value = pageMap(resource.value.type);
   }
   if (isRef(resource)) {
-    console.log('is ref');
     watchEffect(mapTypeToPage);
   } else {
     mapTypeToPage();
