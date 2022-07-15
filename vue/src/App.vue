@@ -1,18 +1,15 @@
 <script setup>
-import { inject, computed } from 'vue';
-import { resourceKey, problemKey, loadingKey, followKey } from "./glue/keys";
+import { inject, ref } from 'vue';
+import { resourceKey, loadingKey } from "./glue/keys";
 import usePage from "./glue/composable/usePage";
 
 const resource = inject(resourceKey);
-const problem = inject(problemKey);
+const type = ref(null);
 const loading = inject(loadingKey);
-const follow = inject(followKey);
-
-const type = computed(() => resource?.value?.type)
-const { pageType } = usePage(type);
+const { pageType } = usePage(resource);
 </script>
 
 <template>
-  <h1 v-if="loading">Loading...</h1>
-  <component :is="pageType" v-if="resource" />
+  <component :is="pageType" />
+  <p v-if="loading">Loading...</p>
 </template>

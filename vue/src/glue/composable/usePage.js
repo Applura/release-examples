@@ -1,4 +1,4 @@
-import { isRef, ref, unref, watchEffect } from 'vue';
+import { isRef, shallowRef, unref, watchEffect } from 'vue';
 import HomePage from '../../pages/HomePage.vue';
 import ArticlePage from '../../pages/ArticlePage.vue';
 import BasicPage from '../../pages/BasicPage.vue';
@@ -14,12 +14,14 @@ const pageMap = (type) => {
   }
   return (type in map) ? map[type] : DefaultPage;
 }
-export default function usePage(type) {
-  const pageType = ref(DefaultPage);
+export default function usePage(resource) {
+  const pageType = shallowRef(DefaultPage);
   function mapTypeToPage() {
-    pageType.value = pageMap(unref(type));
+    console.log('type', resource.value.type)
+    pageType.value = pageMap(resource.value.type);
   }
-  if (isRef(type)) {
+  if (isRef(resource)) {
+    console.log('is ref');
     watchEffect(mapTypeToPage);
   } else {
     mapTypeToPage();
