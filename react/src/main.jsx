@@ -1,5 +1,4 @@
-import App from './App'
-import './index.css'
 import { mount } from './glue';
+import App from './App'
 
 mount(App, 'app');
