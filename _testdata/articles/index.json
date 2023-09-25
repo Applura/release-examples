@@ -4,23 +4,25 @@
     "id": "collection:1",
     "attributes": {
       "title": "Articles",
-      "body": "<p>Recent news and updates</p>",
-      "articles": [
-        {
-          "id": "article:1",
-          "type": "article"
-        },
-        {
-          "id": "article:2",
-          "type": "article"
-        },
-        {
-          "id": "article:3",
-          "type": "article"
-        }
-      ]
+      "body": "<p>Recent news and updates</p>"
     },
     "relationships": {
+      "articles": {
+        "data": [
+          {
+            "id": "article:1",
+            "type": "article"
+          },
+          {
+            "id": "article:2",
+            "type": "article"
+          },
+          {
+            "id": "article:3",
+            "type": "article"
+          }
+        ]
+      },
       "menu": {
         "data": {
           "id": "menu:1",
@@ -56,7 +58,7 @@
         "title": "Article 1"
       },
       "links": {
-        "self": {
+        "canonical": {
           "href": "/article1"
         }
       }
@@ -68,7 +70,7 @@
         "title": "Article 2"
       },
       "links": {
-        "self": {
+        "canonical": {
           "href": "/article2"
         }
       }
@@ -80,7 +82,7 @@
         "title": "Article 3"
       },
       "links": {
-        "self": {
+        "canonical": {
           "href": "/article3"
         }
       }
