@@ -10,9 +10,16 @@ const CollectionPage = () => {
       <Header><h1>{title}</h1></Header>
       <main>
         <div dangerouslySetInnerHTML={{ __html: body }} />
-        {articleList.map((article) => (
-          <ArticleTeaser key={article.id} {...article} />
-        ))}
+        <section>
+          <header>
+            <h3>Recent articles</h3>
+          </header>
+            {articleList.map((article) => (
+              <aside>
+                <ArticleTeaser key={article.id} {...article} />
+              </aside>
+            ))}
+        </section>
       </main>
     </article>
   );
