@@ -1,5 +1,5 @@
-import { bootstrap } from 'client';
-import { ResourceProvider } from './contexts/ResourceContext';
+import { bootstrap } from 'https://cdn.applura.com/dist/js/client/v2.js';
+import { ResourceProvider } from './contexts/ResourceProvider';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 
 export default async function mount(Component, id) {
