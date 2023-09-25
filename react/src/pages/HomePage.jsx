@@ -1,10 +1,15 @@
 import Header from '../components/Header';
+import useResource from '../glue/internal/hooks/useResource';
+
 const HomePage = () => {
+  const { resource: { title, body } } = useResource();
   return (
     <article>
-      <Header><p>This is the home page</p></Header>
+      <Header>
+        <h1>{title}</h1>
+      </Header>
       <main>
-        Home page content
+        <div dangerouslySetInnerHTML={{ __html: body }} />
       </main>
     </article>
   );
