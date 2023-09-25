@@ -9,7 +9,7 @@ export default async function mount(Component, id) {
       <Component/>
     </ResourceProvider>
   );
-  if (container.dataset.appluraRendered) {
+  if (container.dataset.serverRendered) {
     hydrateRoot(container, RootChild);
   } else {
     createRoot(container).render(RootChild);
