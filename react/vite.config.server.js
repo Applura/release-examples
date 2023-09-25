@@ -1,16 +1,18 @@
-import { defineConfig } from 'vite'
+import { defineConfig, resolveConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    rollupOptions: {
-      input: 'src/server.jsx',
-      output: {
-        entryFileNames: '[name].js',
-        format: 'esm',
-      }
+    lib: {
+      entry: resolve(__dirname, 'src/render.jsx'),
+      formats: ['es'],
+      fileName: 'render',
     },
   },
-  plugins: [react()]
-})
+  plugins: [react()],
+  define: {
+    'process.env.NODE_ENV': '"production"',
+  },
+});
