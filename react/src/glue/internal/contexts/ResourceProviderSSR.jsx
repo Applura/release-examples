@@ -5,7 +5,7 @@ export const ResourceProvider = ({ resource, children }) => {
   }
 
   return (
-    <ResourceContext.Provider value={{ resource, problem: undefined, loading: false }}>
+    <ResourceContext.Provider value={{ resource, problem: undefined, loading: false, follow }}>
       {children}
     </ResourceContext.Provider>
   )
