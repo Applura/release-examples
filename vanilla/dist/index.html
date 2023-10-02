@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
+    <!-- Meta tags can be configured per-resource using a Metadata resource field. Applura will add them server side. -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple js rendered App</title>
-    <link as="fetch" crossorigin="use-credentials" href="http://localhost:3001" rel="alternate preload" type="application/vnd.api+json"/>
-
-    <link rel="stylesheet" href="/main.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <title> will be rewritten by the server as needed. -->
+    <title>Starter App</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css"> 
   </head>
   <body>
+    <!-- A <div> with the ID "app" is required for Applura server-side rendering. -->
     <div id="app"></div>
   </body>
 </html>
