@@ -7,6 +7,7 @@ export default defineConfig(({ command, mode }) => {
     build: {
       minify: mode === 'production' ? 'esbuild' : false,
       rollupOptions: {
+        external: ['@applura/client'],
         output: {
           entryFileNames: '[name].js',
           chunkFileNames: '[name].js',

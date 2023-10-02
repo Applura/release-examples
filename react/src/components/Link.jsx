@@ -1,13 +1,26 @@
-import { useResource } from '../glue';
+import React from "react";
+import useFollow from "../hooks/useFollow";
 
-const Link = ({ link }) => {
-  const { follow } = useResource();
-  const { href, title, active } = link;
+/**
+ * Link renders and follows links.
+ *
+ * This component uses the "follow" function provided by the Applura client. If the follow function is unavailable, it
+ * falls back to regular browser navigation. The Applura client automatically manages browser history and handles
+ * external links by initiating a regular browser navigation. It is not necessary to handle those cases here.
+ */
+const Link = ({ title, href }) => {
+  const follow = useFollow();
   const handleClick = (e) => {
-    e.preventDefault();
-    follow(link);
-  }
-  return <a onClick={handleClick} href={href} title={title} className={active ? 'is-active' : ''}>{title}</a>
-}
+    if (follow) {
+      e.preventDefault();
+      follow({ title, href });
+    }
+  };
+  return (
+    <a title={title} href={href} onClick={handleClick}>
+      {title}
+    </a>
+  );
+};
 
 export default Link;

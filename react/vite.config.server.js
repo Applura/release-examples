@@ -10,6 +10,9 @@ export default defineConfig({
       formats: ['es'],
       fileName: 'render',
     },
+    rollupOptions: {
+      external: ['@applura/client'],
+    }
   },
   plugins: [react()],
   define: {

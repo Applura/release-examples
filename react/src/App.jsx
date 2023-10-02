@@ -1,26 +1,30 @@
-import React from 'react'
-import MatchResource from './pages/MatchResource';
-import ArticlePage from './pages/ArticlePage';
-import BasicPage from './pages/BasicPage';
-import HomePage from './pages/HomePage';
-import CollectionPage from './pages/CollectionPage';
-import DefaultPage from './pages/DefaultPage';
-import { useResource } from './glue';
+import React from "react";
+import LandingPage from "./pages/LandingPage";
+import BasicPage from "./pages/BasicPage";
 
-function App() {
-  const { resource, loading } = useResource();
-  return (
-    <React.StrictMode>
-      <MatchResource resource={resource}>
-        <HomePage type="home" />
-        <BasicPage type="page" />
-        <ArticlePage type="article" />
-        <CollectionPage type="collection" />
-        <DefaultPage default />
-      </MatchResource>
-      {loading && <p>Loading...</p>}
-    </React.StrictMode>
-  )
-}
+/**
+ * PageTypes maps server resource types to the component that should render them.
+ */
+const PageTypes = {
+  landing_page: LandingPage,
+  basic_page: BasicPage,
+};
 
-export default App
+/**
+ * App receives the current resource and/or problem and renders the application interface.
+ *
+ * @param resource
+ *   The current resource.
+ * @param problem
+ *   The last problem encountered, if any, such as a client or server error.
+ */
+const App = ({ resource, problem }) => {
+  // Extract the type of the current resource.
+  const { type } = resource;
+  // Look up the appropriate component to render this resource.
+  const Page = PageTypes[type];
+  // Render the resource from its fields.
+  return <Page fields={resource} />;
+};
+
+export default App;
